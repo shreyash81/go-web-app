@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: go-web-app
-        image: <docker-user-name>/go-web-app
+        image: chauhanshreyash18/ultimate-golang-cicd:{{ .Values.image.tag }}
         ports:
         - containerPort: 8080
