@@ -50,7 +50,7 @@ pipeline{
                 sh "docker tag ${DOCKER_IMAGE} index.docker.io/${DOCKER_IMAGE}"
 
                 withCredentials([usernamePassword(credentialsID: 'docker-cred', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
-                    sh "echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin"
+                    sh "echo ${PASSWORD} | docker login -u ${USERNAME} --password-stdin"
                     sh "docker push index.docker.io/${DOCKER_IMAGE}"
                 }
 
