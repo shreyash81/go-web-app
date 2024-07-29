@@ -82,7 +82,7 @@ post {
     success{
         echo 'pipeline Succed'
     }
-    faliure{
+    failure{
         echo 'pipeline failed'
 }
     
