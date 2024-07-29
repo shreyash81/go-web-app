@@ -40,7 +40,7 @@ pipeline{
         environment{
             REGISTRY_CREDENTIALS = credentials('docker-cred')
             DOCKER_IMAGE = "chauhanshreyash18/ultimate-golang-cicd:${BUILD_NUMBER}"
-            DOCKERFILE_LOCATION = "./DOCKERFILE"
+            DOCKERFILE_LOCATION = "./Dockerfile"
 
         }
         steps{
