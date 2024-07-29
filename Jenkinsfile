@@ -38,7 +38,7 @@ pipeline{
     }
     stage('Build and Push the Docker Image'){
         environment{
-            REGISTRY_CREDENTIALS = credentials('docker-cred')
+            REGISTRY_CREDENTIALS_ID = credentials('docker-cred')
             DOCKER_IMAGE = "chauhanshreyash18/ultimate-golang-cicd:${BUILD_NUMBER}"
             DOCKERFILE_LOCATION = "./Dockerfile"
 
