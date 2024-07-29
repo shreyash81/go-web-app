@@ -81,15 +81,14 @@ pipeline{
   }
       
 post {
-    success{
-        echo 'pipeline Succed'
+        success {
+            echo 'Pipeline succeeded'
+        }
+        failure {
+            echo 'Pipeline failed'
+        }
     }
-    failure{
-        echo 'pipeline failed'
 }
-    
-}
-
 
 
 }
