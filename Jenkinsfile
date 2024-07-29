@@ -64,7 +64,7 @@ pipeline{
         }
         steps{
             echo " Updating the manifest..."
-            withCredentials([string(credentialsID: 'github' , variable: "GITHUB_TOKEN")])
+            withCredentials([string(credentialsID: 'github' , variable: "GITHUB_TOKEN")]) {
               sh '''
                     git config user.email "chauhanshreyash357@gmail.com"
                     git config user.name "Shreyash singh"
@@ -78,6 +78,8 @@ pipeline{
         }
     }
 }
+  }
+      
 post {
     success{
         echo 'pipeline Succed'
