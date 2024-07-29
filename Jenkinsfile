@@ -57,7 +57,7 @@ pipeline{
             }
         }
     }
-    stage('Update the Deployment'){
+    stage('Update the helm chart'){
         environment{
             GIT_REPO_NAME = "go-web-app"
             GIT_USER_NAME = "shreyash81"
@@ -69,8 +69,8 @@ pipeline{
                     git config user.email "chauhanshreyash357@gmail.com"
                     git config user.name "Shreyash singh"
                     BUILD_NUMBER=${BUILD_NUMBER}
-                    sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" helm/values.yaml
-                    git add  helm/values.yaml
+                    sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" helm/my-app-chart/values.yaml
+                    git add  helm/my-app-chart/values.yaml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                 '''
