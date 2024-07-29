@@ -69,6 +69,8 @@ pipeline{
                     sh '''
                         git config --global user.email "chauhanshreyash357@gmail.com"
                         git config --global user.name "Shreyash Singh"
+                        git config --global --add safe.directory /var/lib/jenkins/workspace/shreyash\ singh
+                        
                         
                         sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" helm/my-app-chart/values.yaml
                         git add helm/my-app-chart/values.yaml
