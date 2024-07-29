@@ -79,13 +79,13 @@ pipeline{
     }
 }
 post {
-    sucess{
-    echo 'pipeline Succed'
+    success{
+        echo 'pipeline Succed'
     }
-
-faliure{
-    echo 'pipeline failed'
+    faliure{
+        echo 'pipeline failed'
 }
+    
 }
 
 
