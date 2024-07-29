@@ -6,7 +6,7 @@ pipeline{
         }
     }
   stages{
-    stage(checkout SCM){
+    stage('checkout'){
         steps{
             echo 'checking out the code...'
             checkout([$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[url: 'https://github.com/shreyash81/go-web-app.git']]])
