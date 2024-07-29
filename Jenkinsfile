@@ -66,7 +66,7 @@ pipeline{
             echo " Updating the manifest..."
             withCredentials([string(credentialsId: 'github' , variable: "GITHUB_TOKEN")]) {
               sh '''
-                    cd ${WORKSPACE}
+                    cd "/var/lib/jenkins/workspace/shreyash singh"
                     git config user.email "chauhanshreyash357@gmail.com"
                     git config user.name "Shreyash singh"
                     BUILD_NUMBER=${BUILD_NUMBER}
