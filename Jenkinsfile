@@ -33,7 +33,7 @@ pipeline{
     stage('Build the Project'){
         steps{
             echo 'Building the Project or Artifact'
-            sh 'go build -o main'
+            sh 'go build -o main -buildvcs=false'
         }
     }
     stage('Build and Push the Docker Image'){
