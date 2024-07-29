@@ -14,7 +14,7 @@ pipeline{
 
     }
 
-    stage(Install Docker){
+    stage('Install Docker'){
         steps{
             echo 'Installing Docker...'
             sh '''
@@ -24,19 +24,19 @@ pipeline{
         }
 
     }
-    stage(Install Dependencies){
+    stage('Install Dependencies'){
         steps{
             echo 'Installing the Depemdencies...'
             sh 'go mod download'
         }
     }
-    stage(Build the Project){
+    stage('Build the Project'){
         steps{
             echo 'Building the Project or Artifact'
             sh 'go build -o main'
         }
     }
-    stage(Build and Push the Docker Image){
+    stage('Build and Push the Docker Image'){
         environment{
             REGISTRY_CREDENTIALS = credentials('docker-cred')
             DOCKER_IMAGE = "chauhanshreyash18/ultimate-golang-cicd:${BUILD_NUMBER}"
@@ -57,7 +57,7 @@ pipeline{
             }
         }
     }
-    stage(Update the Deployment){
+    stage('Update the Deployment'){
         environment{
             GIT_REPO_NAME = "go-web-app"
             GIT_USER_NAME = "shreyash81"
